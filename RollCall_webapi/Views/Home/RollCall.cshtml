@@ -1,0 +1,50 @@
+﻿@model System.Data.DataSet
+@{
+    ViewData["Title"] = "RollCall";
+}
+<script>
+    function printDiv() {
+        window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
+        window.frames["print_frame"].window.focus();
+        window.frames["print_frame"].window.print();
+    }
+</script>
+
+<h1>@ViewBag.secilitablo</h1>
+
+
+<div>
+    <button class="btn btn-info  offset-md-10" onclick="printDiv()"><i class="fas fa-print"></i> Çizelgeyi Yazdır</button>
+</div>
+<div id="printableTable">
+
+
+    <table class="table table-striped">
+        <thead>
+            @ViewBag.secilitablo
+            <tr>
+                <th scope="col">Derse Giris Saati</th>
+                <th scope="col">Ad Soyad</th>
+                <th scope="col">Ogrenci No</th>
+                <th scope="col">Bolum</th>
+                <th scope="col">Yas</th>
+                <th scope="col">Cinsiyet</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (System.Data.DataRow dr in ViewBag.detaylar.Rows)
+            {
+                <tr>
+                    <td>@(dr["Zaman"])</td>
+                    <td>@(dr["AdSoyad"])</td>
+                    <td>@(dr["No"])</td>
+                    <td>@(dr["Bolum"])</td>
+                    <td>@(dr["Yas"])</td>
+                    <td>@(dr["Cinsiyet"])</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+</div>
+<a href="/Home/Index" class="btn btn-secondary btn-sm"> < Geri Dön</a>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore namespace="RollCall_webapi" p1:Guid="0d2c75df-7662-49bf-b441-f9d1ac9c736e" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="EFMigrationsHistory" entity-set="EFMigrationsHistories" table="`__EFMigrationsHistory`" p1:Guid="8af76051-1c33-4b89-a388-097c71930ac1">
+    <id name="MigrationId" type="String" p1:ValidateRequired="true" p1:Guid="b95b2381-5610-47c8-98c5-906963ae5d24">
+      <column name="MigrationId" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </id>
+    <property name="ProductVersion" type="String" p1:ValidateRequired="true" p1:Guid="8e705904-2cd9-4f01-b9dc-e9ffd936bf6e">
+      <column name="ProductVersion" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Kullanicilar" entity-set="Kullanicilars" table="Kullanicilar" p1:Guid="c430ea2c-e8d4-4f99-81a1-a93d25a2d72e">
+    <id name="Id" type="Int64" p1:ValidateRequired="true" p1:Guid="abe91d2d-75ab-4beb-84e9-b56ac2fcc581">
+      <column name="Id" not-null="True" sql-type="INTEGER" p1:unicode="False" />
+    </id>
+    <property name="KAdi" type="String" p1:ValidateRequired="true" p1:Guid="f7ddfd3b-ea06-4c68-bc9b-23c1a69b400c">
+      <column name="KAdi" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="Sifre" type="String" p1:ValidateRequired="true" p1:Guid="123aabb2-909b-41da-a262-0311528930d6">
+      <column name="Sifre" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="DersKodu" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f819e329-d6fb-464d-aac2-fd31ba94e31e">
+      <column name="DersKodu" not-null="False" sql-type="TEXT" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="EMY144NOB10May2019" entity-set="EMY144NOB10May2019s" table="EMY144NOB10May2019" p1:Guid="679819d4-234b-4f7b-aeb0-d2d129d58179">
+    <id name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="4b948f91-4b21-47cf-a4d2-af3f9ff60587">
+      <column name="Id" not-null="True" sql-type="INT" p1:unicode="False" />
+    </id>
+    <property name="Zaman" type="String" p1:ValidateRequired="true" p1:Guid="446fbcff-3048-49d6-bf10-9da85d8de8c2">
+      <column name="Zaman" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="AdSoyad" type="String" p1:ValidateRequired="true" p1:Guid="2968d93d-eb9e-400f-8509-94943b4575f0">
+      <column name="AdSoyad" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="No" type="Int32" p1:ValidateRequired="true" p1:Guid="6eb09e3c-ed8b-41b5-878e-52bc7934c298">
+      <column name="No" not-null="True" sql-type="INT" p1:unicode="False" />
+    </property>
+    <property name="Bolum" type="String" p1:ValidateRequired="true" p1:Guid="4d8c3ae5-f101-443f-a3ad-226b0132592f">
+      <column name="Bolum" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="Yas" type="Int32" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cf5749d2-0946-4ed9-a0d4-e1ec0a4382c9">
+      <column name="Yas" not-null="False" sql-type="INT" p1:unicode="False" />
+    </property>
+    <property name="Cinsiyet" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ff27e318-9f91-4bf3-abd4-7ff4a5067c5e">
+      <column name="Cinsiyet" not-null="False" sql-type="Text" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="EMY144NOA10May2019" entity-set="EMY144NOA10May2019s" table="EMY144NOA10May2019" p1:Guid="9c70f9a9-610f-45ab-bcff-6046bbb9accc">
+    <id name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="27fb84af-1b3c-4308-8ef9-a8ebc144eabd">
+      <column name="Id" not-null="True" sql-type="INT" p1:unicode="False" />
+    </id>
+    <property name="Zaman" type="String" p1:ValidateRequired="true" p1:Guid="37b519cb-583a-431f-968e-0e19a79b4f60">
+      <column name="Zaman" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="AdSoyad" type="String" p1:ValidateRequired="true" p1:Guid="a07be781-3cd2-4b5d-b55b-a96f6a0847f1">
+      <column name="AdSoyad" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="No" type="Int32" p1:ValidateRequired="true" p1:Guid="7f8868f2-a798-4907-b2da-fe296758ea3d">
+      <column name="No" not-null="True" sql-type="INT" p1:unicode="False" />
+    </property>
+    <property name="Bolum" type="String" p1:ValidateRequired="true" p1:Guid="8a509c79-d839-4f78-a77f-6a9caf38a7db">
+      <column name="Bolum" not-null="True" sql-type="TEXT" p1:unicode="False" />
+    </property>
+    <property name="Yas" type="Int32" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="82f6c5fa-eb1e-4d8e-8127-e4b1d471d648">
+      <column name="Yas" not-null="False" sql-type="INT" p1:unicode="False" />
+    </property>
+    <property name="Cinsiyet" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="62ac94cc-10b9-429a-babb-62fad44c377b">
+      <column name="Cinsiyet" not-null="False" sql-type="Text" p1:unicode="False" />
+    </property>
+  </class>
+</efcore>

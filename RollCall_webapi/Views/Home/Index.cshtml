@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RollCall_webapi.EMY144NOA10May2019>
+@{
+    ViewData["Title"] = "RollCall";
+}
+
+<form asp-action="RollCall" asp-controller="Home" method="post">
+    <div class="row ">
+        <div class="form-group col-6">
+            <select class="form-control" id="tables_select" name="SeciliTablo">
+                @{
+                    foreach (var tabloadi in ViewBag.tablolar)
+                    {
+                        <option value="@tabloadi"> @tabloadi</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group col-4">
+            <button id="showing" type="submit" class="btn btn-outline-success" name="name">Ders Kaydını Göster</button>
+        </div>
+    </div>
+    
+</form>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#showing").click(function () {
+            var selector = document.getElementById('tables_select');
+            var value = selector[selector.selectedIndex].value;
+            $.ajax({
+                url: '/Home/RollCall/',
+                data: { secilitablo: value },
+                type: 'POST'
+            });
+        });
+    }
+</script>
+
+<div class="modal fade bootstrapmodal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"><h2>Modal</h2></div>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+

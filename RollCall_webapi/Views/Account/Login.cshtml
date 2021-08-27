@@ -1,0 +1,102 @@
+﻿@model Kullanici
+@using Microsoft.AspNetCore.Http;
+@{
+
+    Layout = null;
+    Context.Session.Remove("KullaniciAdi");
+    Context.Session.Remove("DersKodu");
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Login" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/signIn/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="~/signIn/js/jquery-2.2.3.min.js"></script>
+
+    <!-- //js -->
+    <!-- web font -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+    <!-- //web font -->
+</head>
+<body>
+    
+    <!-- main -->
+    <div class="main-agileits">
+        <h1>Giriş Doğrulama Sistemi</h1>
+        <div class="mainw3-agileinfo form">
+            <div id="login">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group field-wrap">
+                        <label class="req">Kullanıcı Adı</label>
+                        @Html.EditorFor(model => model.KAdi, new { htmlAttributes = new { @class = "form-control", @required = "" } })
+                        @Html.ValidationMessageFor(model => model.KAdi, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group field-wrap">
+                        <label>Şifre</label>
+                        @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control", @type = "password", @required = "" } })
+                        @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                    </div>
+                    
+                    <div class="form-group ">
+                        <button class="button button-block">Giriş Yap</button>
+                    </div>
+                    <div class="form-group field-wrap">
+                        <label style="font-size:20px;">@TempData["girissonuc"]</label>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+    <!-- //main -->
+    <!-- copyright -->
+    <div class="w3copyright-agile">
+    </div>
+    <!-- //copyright -->
+    <script>
+        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+            var $this = $(this),
+                label = $this.prev('label');
+
+            if (e.type === 'keyup') {
+                if ($this.val() === '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.addClass('active highlight');
+                }
+            } else if (e.type === 'blur') {
+                if ($this.val() === '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.removeClass('highlight');
+                }
+            } else if (e.type === 'focus') {
+
+                if ($this.val() === '') {
+                    label.removeClass('highlight');
+                }
+                else if ($this.val() !== '') {
+                    label.addClass('highlight');
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
